@@ -1,0 +1,29 @@
+{
+  "name": "movies-explorer-api",
+  "author": "Timofei Torshin",
+  "version": "1.0.0",
+  "description": "Бэкенд проекта Movies Explorer",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "lint": "npx eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timtorshin/movies-explorer-api.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timtorshin/movies-explorer-api/issues"
+  },
+  "homepage": "https://github.com/timtorshin/movies-explorer-api#readme",
+  "dependencies": {
+    "eslint": "^8.1.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.2",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.14"
+  }
+}
