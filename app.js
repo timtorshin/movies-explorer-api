@@ -8,6 +8,7 @@ const userRouter = require('./routes/users');
 const movieRouter = require('./routes/movies');
 const auth = require('./middlewares/auth');
 const error = require('./middlewares/error');
+const limiter = require('./middlewares/limiter');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const NotFoundError = require('./utils/NotFoundError');
 
@@ -18,6 +19,7 @@ const app = express();
 mongoose.connect('mongodb://localhost:27017/bitfilmsdb');
 
 app.use(helmet());
+app.use(limiter);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
