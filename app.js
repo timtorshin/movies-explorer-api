@@ -9,6 +9,7 @@ const movieRouter = require('./routes/movies');
 const auth = require('./middlewares/auth');
 const error = require('./middlewares/error');
 const limiter = require('./middlewares/limiter');
+const cors = require('./middlewares/cors');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const NotFoundError = require('./utils/NotFoundError');
 
@@ -23,6 +24,8 @@ app.use(limiter);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(cors);
 
 app.use(requestLogger);
 
