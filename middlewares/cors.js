@@ -1,7 +1,11 @@
 const allowedCors = [
   'https://api.movies-timtorshin.nomoredomains.monster',
   'http://api.movies-timtorshin.nomoredomains.monster',
+  'https://movies-timtorshin.nomoredomains.rocks',
+  'http://movies-timtorshin.nomoredomains.rocks',
+  'https://localhost:3000',
   'http://localhost:3000',
+  'localhost:3000',
 ];
 
 module.exports = (req, res, next) => {
