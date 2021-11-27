@@ -15,19 +15,20 @@ const limiter = require('./middlewares/limiter');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const NotFoundError = require('./utils/NotFoundError');
 
-// const corsOptions = {
-//   origin: [
-//     'https://api.movies-timtorshin.nomoredomains.monster',
-//     'http://api.movies-timtorshin.nomoredomains.monster',
-//     'https://movies-timtorshin.nomoredomains.rocks',
-//     'http://movies-timtorshin.nomoredomains.rocks',
-//     'https://localhost:3000',
-//     'http://localhost:3000',
-//     'localhost:3000',
-//   ],
-//   credentials: true,
-//   method: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-// };
+const corsOptions = {
+  origin: [
+    'https://api.movies-timtorshin.nomoredomains.monster',
+    'http://api.movies-timtorshin.nomoredomains.monster',
+    'https://movies-timtorshin.nomoredomains.rocks',
+    'http://movies-timtorshin.nomoredomains.rocks',
+    'https://localhost:3000',
+    'http://localhost:3000',
+    'localhost:3000',
+  ],
+  credentials: true,
+  method: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  allowedHeaders: ['Content-Type', 'origin', 'Authorization', 'Accept'],
+};
 
 const { PORT = 3000 } = process.env;
 
@@ -43,9 +44,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.use(cors);
 
-// app.use(cors(corsOptions));
-
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(requestLogger);
 
